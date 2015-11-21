@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D10AD931C00D6C300E35656 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10AD921C00D6C300E35656 /* StatusMenuController.swift */; };
+		4D10AD961C00DC1C00E35656 /* PreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D10AD941C00DC1C00E35656 /* PreferencesWindow.swift */; };
+		4D10AD971C00DC1C00E35656 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D10AD951C00DC1C00E35656 /* PreferencesWindow.xib */; };
 		4D9E80521C00D46F00B0F169 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E80511C00D46F00B0F169 /* AppDelegate.swift */; };
 		4D9E80541C00D46F00B0F169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D9E80531C00D46F00B0F169 /* Assets.xcassets */; };
 		4D9E80571C00D46F00B0F169 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9E80551C00D46F00B0F169 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D10AD921C00D6C300E35656 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		4D10AD941C00DC1C00E35656 /* PreferencesWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
+		4D10AD951C00DC1C00E35656 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
 		4D9E804E1C00D46F00B0F169 /* fn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D9E80511C00D46F00B0F169 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D9E80531C00D46F00B0F169 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,8 +57,11 @@
 			isa = PBXGroup;
 			children = (
 				4D9E80511C00D46F00B0F169 /* AppDelegate.swift */,
+				4D10AD921C00D6C300E35656 /* StatusMenuController.swift */,
 				4D9E80531C00D46F00B0F169 /* Assets.xcassets */,
 				4D9E80551C00D46F00B0F169 /* MainMenu.xib */,
+				4D10AD941C00DC1C00E35656 /* PreferencesWindow.swift */,
+				4D10AD951C00DC1C00E35656 /* PreferencesWindow.xib */,
 				4D9E80581C00D46F00B0F169 /* Info.plist */,
 			);
 			path = fn;
@@ -117,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D9E80541C00D46F00B0F169 /* Assets.xcassets in Resources */,
+				4D10AD971C00DC1C00E35656 /* PreferencesWindow.xib in Resources */,
 				4D9E80571C00D46F00B0F169 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,6 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D10AD931C00D6C300E35656 /* StatusMenuController.swift in Sources */,
+				4D10AD961C00DC1C00E35656 /* PreferencesWindow.swift in Sources */,
 				4D9E80521C00D46F00B0F169 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +281,7 @@
 				4D9E805D1C00D46F00B0F169 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

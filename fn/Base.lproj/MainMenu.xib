@@ -12,22 +12,26 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="fn" customModuleProvider="target">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="fn" customModuleProvider="target"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="UEn-rL-mHK" customClass="StatusMenuController" customModule="fn" customModuleProvider="target">
             <connections>
-                <outlet property="statusMenu" destination="Ijs-fk-VqP" id="aKU-xc-n5Y"/>
+                <outlet property="statusMenu" destination="Ijs-fk-VqP" id="DIp-j5-oRT"/>
             </connections>
         </customObject>
-        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu id="Ijs-fk-VqP">
             <items>
                 <menuItem title="Preferences..." id="WZn-Zy-YPN">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="preferencesClicked:" target="UEn-rL-mHK" id="zc0-yM-nrb"/>
+                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="jJL-9s-M7G"/>
                 <menuItem title="Quit" id="4Po-Pf-RY1">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="quitClicked:" target="Voe-Tx-rLC" id="asZ-bE-a5a"/>
+                        <action selector="quitClicked:" target="UEn-rL-mHK" id="6aW-Cd-Llz"/>
                     </connections>
                 </menuItem>
             </items>
