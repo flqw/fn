@@ -8,30 +8,22 @@
 
 import Cocoa
 
-/*
-
-TODO
-
-- Preferences
-- Start on boot
-
-*/
-
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    
+
     @IBOutlet weak var window: NSWindow!
+
+    @IBOutlet weak var statusMenu: NSMenu!
     
+    @IBAction func quitClicked(sender: AnyObject) {
+        NSApplication.sharedApplication().terminate(self)
+    }
+
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
     let notificationCenter = NSWorkspace.sharedWorkspace().notificationCenter
-    let menu = NSMenu()
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        
-        menu.addItem(NSMenuItem(title: "PREFERENCES".localized, action: "openPreferences:", keyEquivalent: ""))
-        menu.addItem(NSMenuItem.separatorItem())
-        menu.addItem(NSMenuItem(title: "QUIT".localized, action: "terminate:", keyEquivalent: ""))
-        
+                
         if let button = statusItem.button {
             button.title = "fn"
             button.action = "clickedStatusItem"
@@ -40,14 +32,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         notificationCenter.addObserver(self, selector: "switchedApplication", name:NSWorkspaceDidActivateApplicationNotification, object: nil);
         
-    }
-    
-    func openPreferences() {
         
     }
     
+    func openPreferences() {
+        print("Open Preferences")
+    }
+    
     func toggleMenu() {
-        statusItem.popUpStatusItemMenu(menu)
+        statusItem.popUpStatusItemMenu(statusMenu)
     }
     
     func toggleState() {
@@ -97,5 +90,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(aNotification: NSNotification) {
         notificationCenter.removeObserver(self);
     }
-    
+
 }
+
