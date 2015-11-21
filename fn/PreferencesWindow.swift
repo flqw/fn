@@ -19,7 +19,6 @@ class PreferencesWindow: NSWindowController, NSWindowDelegate {
         
         self.window?.center()
         self.window?.makeKeyAndOrderFront(nil)
-        NSApp.activateIgnoringOtherApps(true)
     }
     
     func windowWillClose(notification: NSNotification) {

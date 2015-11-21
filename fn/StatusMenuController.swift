@@ -32,6 +32,7 @@ class StatusMenuController: NSObject {
     
     @IBAction func preferencesClicked(sender: NSMenuItem) {
         preferencesWindow.showWindow(nil)
+        NSApp.activateIgnoringOtherApps(true)
     }
     
     func toggleMenu() {
