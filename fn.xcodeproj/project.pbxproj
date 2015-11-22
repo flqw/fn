@@ -13,6 +13,8 @@
 		4D9E80521C00D46F00B0F169 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E80511C00D46F00B0F169 /* AppDelegate.swift */; };
 		4D9E80541C00D46F00B0F169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D9E80531C00D46F00B0F169 /* Assets.xcassets */; };
 		4D9E80571C00D46F00B0F169 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9E80551C00D46F00B0F169 /* MainMenu.xib */; };
+		4DF85CD21C02030C00FEC0CF /* ApplicationCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF85CD11C02030C00FEC0CF /* ApplicationCellView.swift */; };
+		4DF85CD41C021BAD00FEC0CF /* ApplicationMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF85CD31C021BAD00FEC0CF /* ApplicationMenuItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		4D9E80531C00D46F00B0F169 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D9E80561C00D46F00B0F169 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4D9E80581C00D46F00B0F169 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DF85CD11C02030C00FEC0CF /* ApplicationCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationCellView.swift; sourceTree = "<group>"; };
+		4DF85CD31C021BAD00FEC0CF /* ApplicationMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationMenuItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				4D10AD941C00DC1C00E35656 /* PreferencesWindow.swift */,
 				4D10AD951C00DC1C00E35656 /* PreferencesWindow.xib */,
 				4D9E80581C00D46F00B0F169 /* Info.plist */,
+				4DF85CD11C02030C00FEC0CF /* ApplicationCellView.swift */,
+				4DF85CD31C021BAD00FEC0CF /* ApplicationMenuItem.swift */,
 			);
 			path = fn;
 			sourceTree = "<group>";
@@ -141,6 +147,8 @@
 				4D10AD931C00D6C300E35656 /* StatusMenuController.swift in Sources */,
 				4D10AD961C00DC1C00E35656 /* PreferencesWindow.swift in Sources */,
 				4D9E80521C00D46F00B0F169 /* AppDelegate.swift in Sources */,
+				4DF85CD41C021BAD00FEC0CF /* ApplicationMenuItem.swift in Sources */,
+				4DF85CD21C02030C00FEC0CF /* ApplicationCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
