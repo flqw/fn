@@ -15,6 +15,10 @@ class ApplicationCellView: NSTableCellView {
     var setting : AppSetting!
     var controller : PreferencesWindow!
     
+    override func awakeFromNib() {
+        button.imageForSegment(1)?.size = NSSize(width: 18, height: 13)
+    }
+    
     @IBAction func buttonClicked(sender : NSSegmentedControl) {
         
         if (sender.selectedSegment == 0) {

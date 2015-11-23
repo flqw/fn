@@ -68,8 +68,6 @@ class StatusMenuController: NSObject {
     func getInitialStatus() -> Bool {
        
         let value = getFnMode()
-       
-        print("INITIAL VALUE: \(value)")
         
         return value
     }
@@ -93,9 +91,8 @@ class StatusMenuController: NSObject {
             appKey = userInfo[NSWorkspaceApplicationKey] as? NSRunningApplication,
             bundleIdentifier = appKey.bundleIdentifier
         {
-                print("Changed to \(bundleIdentifier)")
             if let forcedState = applicationForcedStateFor(bundleIdentifier) {
-                forceState(forcedState)
+                forceState(!forcedState) // Inversion necessary
             } else {
                 backToToggledMode()
             }

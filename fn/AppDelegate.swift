@@ -11,15 +11,5 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-//    let notificationCenter = NSWorkspace.sharedWorkspace().notificationCenter
-    
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
-//        notificationCenter.addObserver(self, selector: "switchedApplication", name:NSWorkspaceDidActivateApplicationNotification, object: nil);
-    }
-    
-    func applicationWillTerminate(aNotification: NSNotification) {
-//        notificationCenter.removeObserver(self);
-    }
-    
 }
 

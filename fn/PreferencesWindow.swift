@@ -190,7 +190,6 @@ class PreferencesWindow: NSWindowController, NSWindowDelegate, NSTableViewDataSo
     }
     
     func persistState() {
-        print("Persisting")
         
         let userDefaults = NSUserDefaults.standardUserDefaults()
         

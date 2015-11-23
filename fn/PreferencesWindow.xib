@@ -66,7 +66,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="36" viewBased="YES" id="qEe-67-QbC">
-                                    <rect key="frame" x="0.0" y="0.0" width="438" height="152"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="436" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -111,13 +111,15 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6P1-it-luW">
-                                                            <rect key="frame" x="361" y="8" width="71" height="20"/>
+                                                            <rect key="frame" x="362" y="8" width="71" height="20"/>
                                                             <animations/>
                                                             <segmentedCell key="cell" controlSize="small" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="MOb-6D-AbY">
-                                                                <font key="font" metaFont="smallSystem"/>
+                                                                <font key="font" metaFont="systemMedium" size="11"/>
                                                                 <segments>
-                                                                    <segment label="On" width="32" selected="YES"/>
-                                                                    <segment label="Off" width="32" tag="1"/>
+                                                                    <segment label="fn" width="32" selected="YES"/>
+                                                                    <segment image="Volume" width="32" tag="1">
+                                                                        <nil key="label"/>
+                                                                    </segment>
                                                                 </segments>
                                                             </segmentedCell>
                                                             <connections>
@@ -209,5 +211,6 @@
         <image name="NSActionTemplate" width="14" height="14"/>
         <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSRemoveTemplate" width="11" height="11"/>
+        <image name="Volume" width="21" height="16"/>
     </resources>
 </document>
