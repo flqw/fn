@@ -25,12 +25,12 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button translatesAutoresizingMaskIntoConstraints="NO" id="Lmn-Z7-wJ5">
-                        <rect key="frame" x="18" y="25" width="134" height="18"/>
+                        <rect key="frame" x="18" y="25" width="131" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="bXS-5H-BW8"/>
                         </constraints>
                         <animations/>
-                        <buttonCell key="cell" type="check" title="Launch on Startup" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dRu-aB-5aX">
+                        <buttonCell key="cell" type="check" title="Launch at Startup" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dRu-aB-5aX">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>

@@ -1,0 +1,21 @@
+
+/* Class = "NSTextFieldCell"; title = "Version 1.0"; ObjectID = "6x3-xP-DVa"; */
+"6x3-xP-DVa.title" = "Version 1.0";
+
+/* Class = "NSWindow"; title = "Preferences"; ObjectID = "F0z-JX-Cv5"; */
+"F0z-JX-Cv5.title" = "Einstellungen";
+
+/* Class = "NSSegmentedCell"; MOb-6D-AbY.ibShadowedLabels[0] = "fn"; ObjectID = "MOb-6D-AbY"; */
+"MOb-6D-AbY.ibShadowedLabels[0]" = "fn";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "YiS-YT-Geb"; */
+"YiS-YT-Geb.title" = "Table View Cell";
+
+/* Class = "NSButtonCell"; title = "Launch at Startup"; ObjectID = "dRu-aB-5aX"; */
+"dRu-aB-5aX.title" = "Automatisch starten";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "f4E-Qj-pLp"; */
+"f4E-Qj-pLp.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Switch to the following modes automatically:"; ObjectID = "tnb-pN-Een"; */
+"tnb-pN-Een.title" = "Zu den folgenden Modi automatisch wechseln:";

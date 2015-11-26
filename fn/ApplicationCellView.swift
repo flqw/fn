@@ -12,7 +12,7 @@ class ApplicationCellView: NSTableCellView {
 
     @IBOutlet weak var button: NSSegmentedControl!
     
-    var setting : AppSetting!
+    var app : App!
     var controller : PreferencesWindow!
     
     override func awakeFromNib() {
@@ -22,12 +22,10 @@ class ApplicationCellView: NSTableCellView {
     @IBAction func buttonClicked(sender : NSSegmentedControl) {
         
         if (sender.selectedSegment == 0) {
-            setting.setting = true
+            app.setting = true
         } else {
-            setting.setting = false
+            app.setting = false
         }
-        
-        controller.persistState()
         
     }
     

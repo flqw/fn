@@ -8,13 +8,11 @@
 
 import Cocoa
 
-struct GlobalConstants {
-    static let FORCED_APPS_KEY = "forcedApps"
-}
 
 class StatusMenuController: NSObject {
 
     @IBOutlet weak var statusMenu: NSMenu!
+    
     var preferencesWindow: PreferencesWindow!
     
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
@@ -22,6 +20,8 @@ class StatusMenuController: NSObject {
     let notificationCenter = NSWorkspace.sharedWorkspace().notificationCenter
     
     static var instance : StatusMenuController? = nil
+    
+    let preferenceModel : PreferenceModel = PreferenceModel()
     
     var toggledDisabled = true
     
@@ -37,6 +37,7 @@ class StatusMenuController: NSObject {
         toggledDisabled = initialStatus;
         
         preferencesWindow = PreferencesWindow()
+        preferencesWindow.preferenceModel = preferenceModel
 
         if let button = statusItem.button {
             button.title = "fn"
@@ -91,7 +92,7 @@ class StatusMenuController: NSObject {
             appKey = userInfo[NSWorkspaceApplicationKey] as? NSRunningApplication,
             bundleIdentifier = appKey.bundleIdentifier
         {
-            if let forcedState = applicationForcedStateFor(bundleIdentifier) {
+            if let forcedState = preferenceModel.settingFor(bundleIdentifier) {
                 forceState(!forcedState) // Inversion necessary
             } else {
                 backToToggledMode()
@@ -99,19 +100,7 @@ class StatusMenuController: NSObject {
 
         }
     }
-    
-    func applicationForcedStateFor(bundleIdentifier : String) -> Bool? {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        
-        if let forcedApps = userDefaults.dictionaryForKey(GlobalConstants.FORCED_APPS_KEY) as? [String : Bool] {
-            if let value = forcedApps[bundleIdentifier] {
-                return value
-            }
-        }
-     
-        return nil
-    }
-    
+
     func toggleMenu() {
         statusItem.popUpStatusItemMenu(statusMenu)
     }
