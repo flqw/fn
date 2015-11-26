@@ -57,7 +57,7 @@ class PreferenceModel: NSObject {
             .flatMap { $0 }
             .map { bundleFor($0) }
             .filter { $0 != nil }
-            .map { App(bundle: $0!, setting: false, model: self) }
+            .map { App(bundle: $0!, setting: true, model: self) }
             .flatMap { $0 }
     }
     

@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ServiceManagement
 
 class PreferencesWindow: NSWindowController, NSWindowDelegate, NSTableViewDataSource, NSTableViewDelegate {
     
@@ -73,6 +74,16 @@ class PreferencesWindow: NSWindowController, NSWindowDelegate, NSTableViewDataSo
         
     }
     
+    @IBAction func launchAtStartupClicked(sender: NSButton) {
+        let state = Bool(sender.state)
+        setLaunchAtLogin(state)
+        
+        if let status = getLaunchAtLogin() {
+            sender.state = status ? 1 : 0
+        }
+        
+    }
+    
     @IBAction func buttonClicked(sender: NSSegmentedControl) {
     
         if (sender.selectedSegment == 0) {
@@ -119,6 +130,20 @@ class PreferencesWindow: NSWindowController, NSWindowDelegate, NSTableViewDataSo
             buttons.setEnabled(true, forSegment: 1) // Enable the remove button
         }
     }
-
+    
+    func getLaunchAtLogin() -> Bool? {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        return userDefaults.boolForKey("loginItem");
+    }
+    
+    func setLaunchAtLogin(enabled : Bool) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if (!SMLoginItemSetEnabled("de.flqw.fn-Helper", enabled)) {
+            print("Setting login item was not successful!");
+        } else {
+            userDefaults.setBool(enabled, forKey: "loginItem")
+        }
+        userDefaults.synchronize()
+    }
     
 }

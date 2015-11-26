@@ -11,17 +11,13 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    @IBOutlet weak var window: NSWindow!
-
-
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
+        let pathComponents : [String] = (NSBundle.mainBundle().bundlePath as NSString).pathComponents
+        let sliced = Array(pathComponents[1...pathComponents.count - 4])
+        let path = NSString.pathWithComponents(sliced)
+        NSWorkspace.sharedWorkspace().launchApplication(path)
+        NSApp.terminate(nil)
     }
-
-    func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
-    }
-
 
 }
 
