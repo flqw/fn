@@ -13,9 +13,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         let pathComponents : [String] = (NSBundle.mainBundle().bundlePath as NSString).pathComponents
-        let sliced = Array(pathComponents[1...pathComponents.count - 4])
+        let sliced = Array(pathComponents[0...pathComponents.count - 5])
         let path = NSString.pathWithComponents(sliced)
-        NSWorkspace.sharedWorkspace().launchApplication(path)
+        NSLog("Trying to launch application \(path)")
+        let success = NSWorkspace.sharedWorkspace().launchApplication(path)
+        if (!success) {
+            NSLog("Failed to launch application \(path)")
+        } else {
+            NSLog("Did successfully launch application \(path)")
+        }
         NSApp.terminate(nil)
     }
 

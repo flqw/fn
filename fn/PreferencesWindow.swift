@@ -139,6 +139,15 @@ class PreferencesWindow: NSWindowController, NSWindowDelegate, NSTableViewDataSo
     func setLaunchAtLogin(enabled : Bool) {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         if (!SMLoginItemSetEnabled("de.flqw.fn-Helper", enabled)) {
+            let alert = NSAlert()
+            alert.messageText = "Error setting fn as Startup Application"
+            alert.informativeText = "The app must be located in the /Applications directory for this to work."
+            alert.alertStyle = .WarningAlertStyle
+            alert.addButtonWithTitle("OK")
+            
+            alert.runModal()
+            
+            
             print("Setting login item was not successful!");
         } else {
             userDefaults.setBool(enabled, forKey: "loginItem")

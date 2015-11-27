@@ -28,6 +28,14 @@ class App: Equatable {
     }
     
     var name : String {
+        if let infoDictionary = bundle.localizedInfoDictionary {
+            if let name = infoDictionary["CFBundleDisplayName"] as? String {
+                return name
+            }
+            if let name = infoDictionary[kCFBundleNameKey as String] as? String {
+                return name
+            }
+        }
         if let infoDictionary = bundle.infoDictionary {
             if let name = infoDictionary[kCFBundleNameKey as String] as? String {
                 return name
