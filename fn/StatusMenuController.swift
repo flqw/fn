@@ -107,27 +107,29 @@ class StatusMenuController: NSObject {
     
     func switchToggle() {
         if let button = statusItem.button {
-            button.appearsDisabled = !button.appearsDisabled
-            toggledDisabled = button.appearsDisabled
-            setFnMode(button.appearsDisabled)
+            if setFnMode(button.appearsDisabled) {
+                button.appearsDisabled = !button.appearsDisabled
+                toggledDisabled = button.appearsDisabled
+            }
         }
     }
     
     func backToToggledMode() {
         if let button = statusItem.button {
             if button.appearsDisabled != toggledDisabled {
-                button.appearsDisabled = toggledDisabled
-                setFnMode(toggledDisabled)
+                if setFnMode(toggledDisabled) {
+                    button.appearsDisabled = toggledDisabled
+                }
             }
         }
     }
     
     func forceState(state : Bool) {
         if let button = statusItem.button {
-            
             if (state != button.appearsDisabled) {
-                button.appearsDisabled = state
-                setFnMode(state)
+                if setFnMode(state) {
+                    button.appearsDisabled = state
+                }
             }
             
         }
@@ -141,19 +143,31 @@ class StatusMenuController: NSObject {
         
         let service = IOServiceGetMatchingService(kIOMasterPortDefault, classToMatch)
         
-        IOServiceOpen(service, mach_task_self_, UInt32(kIOHIDParamConnectType), &connect)
+        var kern = IOServiceOpen(service, mach_task_self_, UInt32(kIOHIDParamConnectType), &connect)
+    
+        if (kern != kIOReturnSuccess) {
+            NSLog("getFnMode() IOServiceOpen Kern \(returnCodeMap[kern])")
+        }
         
         let value = UnsafeMutablePointer<UInt32>.alloc(1)
         let actualSize = UnsafeMutablePointer<UInt32>.alloc(1)
         
-        IOHIDGetParameter(connect, kIOHIDFKeyModeKey, 1, value, actualSize);
+        kern = IOHIDGetParameter(connect, kIOHIDFKeyModeKey, 1, value, actualSize);
         
-        IOServiceClose(connect)
+        if (kern != kIOReturnSuccess) {
+            NSLog("getFnMode() IOHIDGetParameter Kern \(returnCodeMap[kern])")
+        }
+        
+        kern = IOServiceClose(connect)
+        
+        if (kern != kIOReturnSuccess) {
+            NSLog("getFnMode() IOServiceClose Kern \(returnCodeMap[kern])")
+        }
         
         return value.memory == 0
     }
     
-    func setFnMode(enabled : Bool) {
+    func setFnMode(enabled : Bool) -> Bool {
         
         // 0 = Apple Mode
         // 1 = F Mode
@@ -165,11 +179,30 @@ class StatusMenuController: NSObject {
         
         let service = IOServiceGetMatchingService(kIOMasterPortDefault, classToMatch)
         
-        IOServiceOpen(service, mach_task_self_, UInt32(kIOHIDParamConnectType), &connect)
+        var kern = IOServiceOpen(service, mach_task_self_, UInt32(kIOHIDParamConnectType), &connect)
         
-        IOHIDSetParameter(connect, kIOHIDFKeyModeKey, &setting, 1)
+        var openKern = true, setKern = true, closeKern = true
         
-        IOServiceClose(connect)
+        if (kern != kIOReturnSuccess) {
+            NSLog("setFnMode(\(enabled)) IOServiceOpen Kern \(returnCodeMap[kern])")
+            openKern = false
+        }
+        
+        kern = IOHIDSetParameter(connect, kIOHIDFKeyModeKey, &setting, 1)
+        
+        if (kern != kIOReturnSuccess) {
+            NSLog("setFnMode(\(enabled)) IOHIDSetParameter Kern \(returnCodeMap[kern])")
+            setKern = false
+        }
+        
+        kern = IOServiceClose(connect)
+        
+        if (kern != kIOReturnSuccess) {
+            NSLog("setFnMode(\(enabled)) IOServiceClose Kern \(returnCodeMap[kern])")
+            closeKern = false
+        }
+        
+        return openKern && setKern && closeKern
     }
     
     func clickedStatusItem() {

@@ -14,6 +14,7 @@
 		4D9E80521C00D46F00B0F169 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E80511C00D46F00B0F169 /* AppDelegate.swift */; };
 		4D9E80541C00D46F00B0F169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D9E80531C00D46F00B0F169 /* Assets.xcassets */; };
 		4D9E80571C00D46F00B0F169 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9E80551C00D46F00B0F169 /* MainMenu.xib */; };
+		4DC4637E1C09A9A9002B41EC /* IOReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4637D1C09A9A9002B41EC /* IOReturn.swift */; };
 		4DD0A7B31C079FDF00B3658D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DD0A7B51C079FDF00B3658D /* Localizable.strings */; };
 		4DD0A7B81C07A07800B3658D /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DD0A7BA1C07A07800B3658D /* PreferencesWindow.xib */; };
 		4DD0A7BE1C07A51300B3658D /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD0A7BD1C07A51300B3658D /* ServiceManagement.framework */; };
@@ -46,6 +47,7 @@
 		4D9E80531C00D46F00B0F169 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D9E80561C00D46F00B0F169 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4D9E80581C00D46F00B0F169 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DC4637D1C09A9A9002B41EC /* IOReturn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOReturn.swift; sourceTree = "<group>"; };
 		4DD0A7B41C079FDF00B3658D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4DD0A7B61C07A05700B3658D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		4DD0A7B71C07A05700B3658D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				4DF85CD31C021BAD00FEC0CF /* ApplicationMenuItem.swift */,
 				4D12AD681C078B76004A8978 /* PreferenceModel.swift */,
 				4DD0A7B51C079FDF00B3658D /* Localizable.strings */,
+				4DC4637D1C09A9A9002B41EC /* IOReturn.swift */,
 			);
 			path = fn;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D12AD691C078B76004A8978 /* PreferenceModel.swift in Sources */,
+				4DC4637E1C09A9A9002B41EC /* IOReturn.swift in Sources */,
 				4D10AD931C00D6C300E35656 /* StatusMenuController.swift in Sources */,
 				4D10AD961C00DC1C00E35656 /* PreferencesWindow.swift in Sources */,
 				4D9E80521C00D46F00B0F169 /* AppDelegate.swift in Sources */,
@@ -395,7 +399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = fn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -408,7 +412,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = fn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -421,7 +425,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "fn Helper/fn Helper.entitlements";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "fn Helper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -435,7 +439,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "fn Helper/fn Helper.entitlements";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "fn Helper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
