@@ -1,9 +1,12 @@
-<img src="logo.png" width="150" />
+# fn
+
+<img src="logo.png" width="150" align="right" />
 
 A puristic menu bar application for OS X that toggles the "fn" state of the F-Keys on Apple keyboards based on the active application.
 
 The application relies on IOKit to change the fn button state and therefore does not run within the App-Store sandbox, which is why I made it Open Source.
 
+<div style="clear:both"></div>
 
 ## Compile
 
