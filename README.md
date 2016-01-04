@@ -8,9 +8,9 @@ The application relies on IOKit to change the fn button state and therefore does
 
 <div style="clear:both"></div>
 
-## Compile
+## Download / Compile / Run
 
-Open the project in XCode and compile it yourself.
+Open the project in XCode and compile it yourself or [download](https://github.com/flqw/fn/releases/download/v1.0.0/fn.app.zip) the release zip that contains the application signed with my developer identity.
 
 ## Usage
 
